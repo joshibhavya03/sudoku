@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Father's Day Engineer Papa!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(#0f2027, #203a43, #2c5364);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: 'Courier New', monospace;
+    }
+
+    .card {
+      width: 350px;
+      height: 220px;
+      perspective: 1000px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      backface-visibility: hidden;
+      box-shadow: 0 0 20px rgba(0,255,255,0.2);
+      overflow: hidden;
+    }
+
+    .card-front {
+      background: #001f3f;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #00ffff;
+      border: 2px solid #00ffff;
+      text-align: center;
+      animation: glow 2s infinite alternate;
+    }
+
+    .card-front h1 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .card-front .icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+      animation: flicker 2s infinite;
+    }
+
+    .card-back {
+      background: #002b36;
+      color: #ffffff;
+      transform: rotateY(180deg);
+      padding: 20px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      border: 2px dashed #00ffff;
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+      }
+      to {
+        box-shadow: 0 0 20px #00ffff, 0 0 30px #00ccff;
+      }
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.4; }
+      100% { opacity: 1; }
+    }
+
+    .circuit-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        repeating-linear-gradient(to right, #00ffff33 0 1px, transparent 1px 5px),
+        repeating-linear-gradient(to bottom, #00ffff33 0 1px, transparent 1px 5px);
+      pointer-events: none;
+      opacity: 0.2;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="card-inner">
+    <div class="card-face card-front">
+      <div class="icon">⚡</div>
+      <h1>Happy Father's Day</h1>
+      <p>To my Super Engineer Dad</p>
+      <div class="circuit-lines"></div>
+    </div>
+    <div class="card-face card-back">
+      <p>Dear Papa,</p>
+      <p>You light up my world like circuits spark with life! Thank you for fixing everything — from broken bulbs to my mood 😄</p>
+      <p>Forever charged by your love,<br><strong>~ Bhavya 💡</strong></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
